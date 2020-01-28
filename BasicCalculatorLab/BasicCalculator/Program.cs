@@ -13,15 +13,9 @@ namespace BasicCalculator
             int Temperature;
             int dewpoint;
             int relHumidity;
+            int windspeed;
+           
 
-
-            
-
-            //ask for windspeed
-
-            //calculate the wind chill
-
-            //print the windchill
 
             //ask user for temperature
             Console.WriteLine("Enter the Temperature");
@@ -39,7 +33,20 @@ namespace BasicCalculator
             //print dewpoint
             Console.WriteLine("Dew Point =" + dewpoint);
 
+            //ask for windspeed
+            Console.WriteLine("Enter the Wind Speed");
+            input = Console.ReadLine();
+            windspeed = int.Parse(input);
 
+            //calculate the wind chill
+            double windchill = 35.74
+                + (.6215 * Temperature)
+                - (35.75 * Math.Pow(windspeed, .16))
+                + (.4275 * Temperature * Math.Pow(windspeed, .16));
+
+
+            //print the windchill
+            Console.WriteLine("Wind Chill =" + windchill);
 
         }
     }
